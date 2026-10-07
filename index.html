@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كيف حالك اليوم؟ | يوم الصحة النفسية</title>
+  <meta name="description" content="اختبار تفاعلي قصير بمناسبة يوم الصحة النفسية: خذ لحظة مع نفسك وتعرّف على مزاجك الآن.">
+  <meta name="theme-color" content="#7aa7a1">
+
+  <!-- الخط العربي (Tajawal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- عناصر زخرفية خفيفة في الخلفية -->
+  <div class="bg-blob blob-1" aria-hidden="true"></div>
+  <div class="bg-blob blob-2" aria-hidden="true"></div>
+  <div class="bg-blob blob-3" aria-hidden="true"></div>
+
+  <!-- ===================== الهيدر والشعارات ===================== -->
+  <!--
+    لاستبدال الشعارات:
+    1) أنشئ مجلدًا اسمه logos بجانب index.html
+    2) ضع فيه الصور بنفس الأسماء: university.png / mental-health-day.png / initiative.png
+       (أو غيّر مسار src أدناه إلى اسم ملفك، PNG أو JPG)
+    إذا لم توجد الصورة يظهر المكان المؤقت تلقائيًا.
+  -->
+  <header class="site-header">
+    <div class="logos">
+      <div class="logo-slot" data-label="شعار نادي الروبوت والرياضات">
+        <img src="logo/Robotic&SportClub.png" alt="شعار نادي الروبوت والرياضات" onerror="this.parentElement.classList.add('no-img')">
+      </div>
+      
+      <div class="logo-slot" data-label="شعار المبادرة">
+        <img src="logo/qamat.PNG" alt="شعار المبادرة" onerror="this.parentElement.classList.add('no-img')">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===================== الصفحة الرئيسية ===================== -->
+    <section id="screen-intro" class="screen active" aria-labelledby="intro-title">
+      <div class="hero-emoji" aria-hidden="true">🌿</div>
+      <h1 id="intro-title">كيف حالك اليوم؟</h1>
+      <p class="lead">خذ لحظة مع نفسك، وأجب عن الأسئلة التالية لتتعرف أكثر على مزاجك الآن.</p>
+      <button id="btn-start" class="btn btn-primary btn-lg" type="button">ابدأ الاختبار</button>
+      <p class="mini-note">٥ أسئلة قصيرة · دون تسجيل · لا يتم حفظ أي بيانات</p>
+    </section>
+
+    <!-- ===================== الاختبار ===================== -->
+    <section id="screen-quiz" class="screen" aria-labelledby="question-title">
+      <div class="progress-wrap">
+        <div class="progress-text" id="progress-text" aria-live="polite">السؤال 1 من 5</div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-box" id="question-box">
+        <h2 id="question-title" class="question-title"></h2>
+        <div id="options" class="options" role="radiogroup" aria-labelledby="question-title"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="btn-prev" class="btn btn-ghost" type="button">→ السابق</button>
+        <button id="btn-next" class="btn btn-primary" type="button" disabled>التالي ←</button>
+      </div>
+    </section>
+
+    <!-- ===================== النتيجة ===================== -->
+    <section id="screen-result" class="screen" aria-labelledby="result-title">
+      <div class="result-card" id="result-card">
+        <div class="result-emoji" id="result-emoji" aria-hidden="true"></div>
+        <h2 id="result-title" class="result-title"></h2>
+        <p id="result-desc" class="result-desc"></p>
+        <div class="tip-box">
+          <span class="tip-label">💡 نصيحة بسيطة</span>
+          <p id="result-tip"></p>
+        </div>
+        <p class="disclaimer">هذا الاختبار للتأمل والتوعية فقط، ولا يُعد تشخيصًا أو تقييمًا نفسيًا.</p>
+        <p class="support-note">وإذا شعرت أنك بحاجة إلى دعم، فلا تتردد في التحدث مع شخص تثق به أو مع مختص.</p>
+      </div>
+      <button id="btn-restart" class="btn btn-primary" type="button">إعادة الاختبار</button>
+    </section>
+
+  </main>
+
+  <!-- ===================== الفوتر ===================== -->
+  <!-- غيّر اسم المبادرة والروابط من هنا -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h3 class="footer-name">قــــامــــات </h3>
+      <p class="footer-tagline">مساحتك لمشاعرك تبدأ من هنا 🤍</p>
+
+      <ul class="social-links">
+        <li> <a href="https://www.instagram.com/qamatinitiative?stkn=MWxmcDhpa3k4dTF3Ng==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> <img src="logo/instagram.png" alt="Instagram"> </a> </li>
+        <li><a href="https://x.com/qamatinitiative?s=11" target="_blank" rel="noopener noreferrer">𝕏</a></li>
+        <li><a href="https://www.linkedin.com/in/sarah-alkahtani-ba914a241?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> <img src="logo/linkedin.svg.webp" alt="LinkedIn"> </a> </li>
+        <li><a href="mailto:qamatinitiative@gmail.com">✉️</a></li>
+      </ul>
+
+      <p class="copyright"><br>©️ 2026 جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
